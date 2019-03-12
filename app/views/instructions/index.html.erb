@@ -1,0 +1,15 @@
+<h1>Инструкции</h1>
+     
+<div class="advantages_container">
+	<div class="advantages">
+		<div class="advantages_item">
+			<% @instructions.each do |instruction| %>
+				<img class ="imge">
+					<% instruction.images.each do |image|%>
+      					<%= image_tag(image.file_url) %>
+      				<% end %>
+      			<h2><%= instruction.title %></h2>
+      			<p><%= instruction.text %></p>
+      		<% end %>
+      	</div>
+      	

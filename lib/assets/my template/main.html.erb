@@ -1,0 +1,43 @@
+main.html.erb
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<header>
+      <div class="logo">
+        <img class="graficlogo" src="assets/logo.jpg" %>
+      </div>
+      <nav>
+        <div>
+          
+          <%= render partial: 'layouts/menu' %>
+        </div> 
+      </nav>
+    </header>
+     
+     <div class="topnav" id="myTopnav">
+
+            <%= link_to 'Рюкзаки', root_path %>
+        
+            <%= link_to 'Каталоги', groups_path %>
+                
+            <%= link_to 'Все продукты', all_products_path %>
+               
+            <%= link_to 'Инструкции', instructions_path %>
+                
+            <a href="#" id="menu" class="icon">&#9776</a>
+
+          </div>
+
+<div class="advantages_container">
+	<div class="advantages">
+		<div class="advantages_item">
+			<% @instructions.each do |instruction| %>
+				<img class ="imge">
+					<% instruction.images.each do |image|%>
+      					<%= image_tag(image.file_url) %>
+      				<% end %>
+      			<h2><%= instruction.title %></h2>
+      			<p><%= instruction.text %></p>
+      		<% end %>
+      	</div>

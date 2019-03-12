@@ -1,0 +1,28 @@
+<h1>Список товара</h1>
+<%= form_tag group_products_path, method: :get do  %>
+  <%= text_field_tag 'q[name_cont]', params[:q]&.[](:name_cont), placeholder: 'Поиск по товару' %>
+  <%= text_field_tag 'q[price_gteq]', params[:q]&.[](:price_gteq), placeholder: 'Минимальная цена' %>
+  <%= text_field_tag 'q[price_lteq]', params[:q]&.[](:price_lteq), placeholder: 'Максимальная цена' %>
+  
+  <%= submit_tag 'Поиск', class: 'btn btn-default' %>
+<% end %>
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Описание</th>
+    <th>Цена</th>
+    <th>Фото</th>
+  </tr>
+
+<% @group.products.each do |product| %>
+    <tr>
+      <td><%= link_to product.name, group_product_path(@group, product)%></td>
+      <td><%= product.pr_description %></td>
+      <td><%= product.price %></td>
+      <td><% product.images.each do |image| %>
+        <%= image_tag(image.file_url(:thumb)) %></td>
+      <% end %>
+    <tr>
+<% end %>
+</table>
+

@@ -1,0 +1,36 @@
+<hr><hr><hr><hr><hr>
+<p>
+  <strong>Каталог:</strong>
+  <%= @page_title = @group.title %>
+</p>
+ 
+<p>
+  <strong>Описание:</strong>
+  <%= @group.text %>
+</p>
+
+  <strong>Фото:</strong>
+
+<div class="carousel slide" data-ride="carousel" id="slides">
+
+  <ul class="carousel-indicators">
+    <li data-target="#slides" data-slide-to="0" class="active"></li>
+    <li data-target="#slides" data-slide-to="1"></li>
+    <li data-target="#slides" data-slide-to="2"></li>
+  </ul>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <% @group.images.each do |image| %>
+      
+        <%= image_tag(image.file_url) %>
+      <% end %>
+    </div>
+    
+  </div>    
+</div>
+  
+    
+        
+
+<%= link_to 'Продукты', group_products_path(@group) %>
