@@ -1,28 +1,25 @@
-<h1>Список товара</h1>
-<%= form_tag group_products_path, method: :get do  %>
-  <%= text_field_tag 'q[name_cont]', params[:q]&.[](:name_cont), placeholder: 'Поиск по товару' %>
-  <%= text_field_tag 'q[price_gteq]', params[:q]&.[](:price_gteq), placeholder: 'Минимальная цена' %>
-  <%= text_field_tag 'q[price_lteq]', params[:q]&.[](:price_lteq), placeholder: 'Максимальная цена' %>
-  
-  <%= submit_tag 'Поиск', class: 'btn btn-default' %>
-<% end %>
-<table>
-  <tr>
-    <th>Название</th>
-    <th>Описание</th>
-    <th>Цена</th>
-    <th>Фото</th>
-  </tr>
 
-<% @group.products.each do |product| %>
-    <tr>
-      <td><%= link_to product.name, group_product_path(@group, product)%></td>
-      <td><%= product.pr_description %></td>
-      <td><%= product.price %></td>
-      <td><% product.images.each do |image| %>
-        <%= image_tag(image.file_url(:thumb)) %></td>
+<div class="container padding">
+  <h1 class="text-center padding_top">Продукты Группы</h1>
+  <div class="group_box padding">
+
+    <% @group.products.each do |product| %>
+    <div class="group_info">
+      <h2><%= link_to product.name, group_product_path(@group, product)%></h2>
+      <p><%= product.pr_description %></p>
+      <h3 class="card-title pricing-card-title">Цена: <%= product.price %></h3>
+    </div>
+
+    <div class="group_img oneImg">
+      <% product.images.each do |image| %>
+        <%= image_tag(image.file_url) %>
       <% end %>
-    <tr>
-<% end %>
-</table>
+    </div>
+    <% end %>
+  </div> 
+</div>
+  
+  
+  
+
 

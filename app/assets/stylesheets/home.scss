@@ -2,57 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body, html {
-	width: 100%;
+/*all*/
+
+* {
+	box-sizing: border-box;
+	&:before, &:after {
+		box-sizing: border-box;
+	}
+}
+html, body {
 	height: 100%;
-	color: #222;
+}
+
+body {
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
 	font-family: "Poppins", sans-serif;
 	word-wrap: break-word;
-}
-
-.navbar-brand {
-	width: 150px;
-}
-
-.navbar-nav li {
-	padding-right: 20px;
-}
-
-.nav-link {
-	font-size: 1.1em !important;
-}
-
-.carousel-inner {
-	height: 500px;
-}
-
-.carousel-inner img {
-	height: 100%;
-}
-
-@media (min-width: 1000px) {
-	.carousel-inner img {
-		width: 100%;
-	}
-}
-
-.carousel-caption {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-80%);
-	text-shadow: 1px 1px 10px #000;
-}
-
-@media (max-width: 450px) {
-	.carousel-caption display-2 {
-		font-size: 3em;
-	}
+	overflow-x: hidden;
+	opacity: 1;
 }
 
 .jumbotron {
 	padding: 1em;
 	margin: 0 auto;
 	margin-top: 20px;
+}
+
+.padding_top {
+	padding-top: 90px;
 }
 
 .padding {
@@ -71,6 +51,75 @@ body, html {
 	margin-bottom: 1em;
 }
 
+.oneImg img:not(:first-child) {
+	display: none;
+}
+
+/*navbar*/
+
+nav {
+	background-image: url("../assets/footer.jpg");
+}
+
+.navbar-brand {
+	background-image: url("../assets/logo.jpg");
+	background-size: cover;
+	width: 150px;
+}
+
+.navbar-nav li {
+	padding-right: 20px;
+}
+
+.nav-link {
+	font-size: 1.7em !important;
+	font-weight: bold;
+}
+
+/*button*/
+
+.btn {
+	padding: 15px 45px;
+	font-size: 1em !important;
+	text-align: center;
+	align-content: center;
+}
+
+ .btn.collapsed:after {
+    float: right;
+  }
+
+/*carousel*/
+
+.carousel-inner {
+	height: 500px;
+}
+
+.carousel-inner img {
+	height: 100%;
+}
+
+.carousel-caption {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-80%);
+	text-shadow: 1px 1px 10px #000;
+}
+
+@media (max-width: 450px) {
+	.carousel-caption display-2 {
+		font-size: 3em;
+	}
+}
+
+@media (min-width: 1000px) {
+	.carousel-inner img {
+		width: 100%;
+	}
+}
+
+/*symbol*/
+
 .fa-code, .fa-bold, .fa-css3 {
 	font-size: 4em;
 	margin: 1em;
@@ -82,9 +131,42 @@ body, html {
 
 .fa-css3 {color: #2163af}
 
-.img-fluid {
-	width: 80%;
+
+/*news*/
+
+.news-box {
+	padding-top: 25px;
+	background-color: #FFF8DC;
 }
+
+.news-content {
+	border-right: 1px solid #dadada;
+	p {
+		font-size: 14px;
+		min-height: 150px;
+		
+	}
+	h2 {
+		font-size: 34px;
+		font-weight: 800;
+	}
+}
+
+.news-img {
+	padding-top: 25px;
+	background-size: cover;
+    overflow: hidden;
+}
+
+.news-img img {
+	background-size: cover;
+    background-position: center;
+	width: 100%;
+    height: 80%;
+}
+
+
+/*close_box_with_img*/
 
 #fixed {
 	height: 400px;
@@ -104,22 +186,28 @@ body, html {
 }
 
 #gifs img {
+	background-size: cover;
+	background-position: center;
 	width: 200px;
 	height: 200px;
 	margin-bottom: 20px;
 }
 
-.oneImg img:not(:first-child) {
-	display: none;
-}
+/*best_price*/
 
 .card-body {
 	display: flex;
 }
 
 .col {
+	background-color: #f7f7f7;
 	display: flex;
   	flex-direction: column;
+  	position: relative;
+}
+
+.col img:hover {
+	transform: scale(1.1) translateY(-10px);
 }
 
 @media (max-width: 750px) {
@@ -127,6 +215,8 @@ body, html {
 		font-size: 1.5em;
 	}
 }
+
+/*footer*/
 
 .social a {
 	font-size: 4em;
@@ -149,3 +239,4 @@ footer {
 	border-top: 4px solid silver;
 	color: white;
 }
+

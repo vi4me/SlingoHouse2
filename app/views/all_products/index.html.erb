@@ -1,10 +1,13 @@
-<%= form_tag all_products_path, method: :get do  %>
-  <%= text_field_tag 'q[name_cont]', params[:q]&.[](:name_cont), placeholder: 'Поиск по товару' %>
-  <%= text_field_tag 'q[price_qteq]', params[:q]&.[](:price_qteq), placeholder: 'Минимальная цена' %>
-  <%= text_field_tag 'q[price_lteq]', params[:q]&.[](:price_lteq), placeholder: 'Максимальная цена' %>
-  <br>
-  <%= submit_tag 'Поиск', class: 'btn btn-default' %>
-<% end %>
+<div class="padding_top">
+  <%= form_tag all_products_path, method: :get do  %>
+    <%= text_field_tag 'q[name_cont]', params[:q]&.[](:name_cont), placeholder: 'Поиск по товару' %>
+    <%= text_field_tag 'q[price_qteq]', params[:q]&.[](:price_qteq), placeholder: 'Минимальная цена' %>
+    <%= text_field_tag 'q[price_lteq]', params[:q]&.[](:price_lteq), placeholder: 'Максимальная цена' %>
+    <br>
+    <%= submit_tag 'Поиск', class: 'btn btn-default' %>
+  <% end %>
+</div>
+
 <h1>Список товара</h1>
 <table>
   <tr>
@@ -25,3 +28,4 @@
     <tr>
 <% end %>
 </table>
+

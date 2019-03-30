@@ -1,17 +1,15 @@
-<hr><hr><hr><hr><hr>
+
 <div class="container padding">
-  <h1 class="text-center">Группы</h1>
-  <div class="box padding">
+  <h1 class="text-center padding_top">Группы</h1>
+  <div class="group_box padding">
 
     <% @groups.each do |group| %>
-    <div class="box1">
+    <div class="group_info">
       <h2><%= link_to group.title, group_path(group) %></h2>
       <p><%= group.text %></p>
-      <br>
-      <a href="#" class="btn btn-danger">Читать далее</a>
     </div>
 
-    <div class=" box2 oneImg">
+    <div class="group_img oneImg">
       <% group.images.each do |image| %>
         <%= image_tag(image.file_url) %>
       <% end %>

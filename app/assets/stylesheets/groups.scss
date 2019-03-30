@@ -1,0 +1,69 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*group.index*/
+
+.padding {
+	padding-bottom: 2em;
+}
+
+.group_box {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat (auto-fill, 400px);
+    grid-row-gap: 40px;
+}
+
+.group_info {
+	display: grid;
+	grid-template-rows: 50px 350px ;
+	justify-content: left;
+    overflow: hidden;
+}
+
+.group_img {
+	display: grid;
+	justify-content: right;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.group_img img {	
+    background-size: cover;
+    background-position: center;
+	width: 100%;
+    height: 100%;
+}
+
+/*group.show*/
+
+.gr_bottom {
+    top: 330px; 
+    text-shadow: 1px 1px 10px #000;
+}
+
+.group_carousel-inner{
+  width:100%;
+  max-height: 200px !important;
+}
+
+.gr_content h2 {
+    text-align: center;
+}
+.gr_text {
+    background-color: #FFF8DC;
+    text-align: left;
+}
+.gr_img {
+    width:100%;
+    max-height: 200px !important;
+   
+}
+
+
+body{background:url(http://bootstraptema.ru/images/bg/bg-4.png)}
+
+p {
+    font-size: 14px;
+}
