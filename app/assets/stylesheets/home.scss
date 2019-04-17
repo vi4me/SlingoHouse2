@@ -15,6 +15,8 @@ html, body {
 }
 
 body {
+	background:url(http://bootstraptema.ru/images/bg/bg-4.png);
+	position: relative;
 	font-size: 16px;
 	min-width: 320px;
 	position: relative;
@@ -23,6 +25,10 @@ body {
 	word-wrap: break-word;
 	overflow-x: hidden;
 	opacity: 1;
+}
+
+p {
+    font-size: 14px;
 }
 
 .jumbotron {
@@ -65,6 +71,14 @@ nav {
 	background-image: url("../assets/logo.jpg");
 	background-size: cover;
 	width: 150px;
+	height: 60px;
+}
+
+.navbar-brand img {
+	background-size: cover;
+    background-position: center;
+	height: 100%;
+	width: 100%;
 }
 
 .navbar-nav li {
@@ -185,7 +199,7 @@ nav {
 	margin-bottom: 20px;
 }
 
-#gifs img {
+.gifs img {
 	background-size: cover;
 	background-position: center;
 	width: 200px;
@@ -195,19 +209,58 @@ nav {
 
 /*best_price*/
 
-.card-body {
-	display: flex;
+.prod_box {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat (350px);
+    grid-gap: 20px; 
 }
 
-.col {
-	background-color: #f7f7f7;
-	display: flex;
-  	flex-direction: column;
-  	position: relative;
+.prod_info {
+	height: 400px;
+    perspective: 1000px;
 }
 
-.col img:hover {
-	transform: scale(1.1) translateY(-10px);
+.rotate {
+	position: relative;
+	transition: 0.5s;
+	transform-style: preserve-3d;
+}
+
+.prod_info:hover .rotate {
+	transform: rotateY(180deg);
+}
+
+.text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotateY(180deg);
+	border: 4px double #ccc;
+	width: 225px;
+	height: 350px;
+	background: #fff;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.prod_img {
+	background-size: cover;
+    overflow: hidden;
+}
+
+.prod_img img {
+	vertical-align: middle;
+	border: 4px double #ccc;
+	width: 225px;
+	height: 350px;
+	background: #fff;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 @media (max-width: 750px) {
@@ -238,5 +291,6 @@ footer {
 	padding-top: 50px;
 	border-top: 4px solid silver;
 	color: white;
+	height: 165px;
 }
 

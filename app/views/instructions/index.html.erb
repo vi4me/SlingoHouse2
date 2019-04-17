@@ -1,15 +1,51 @@
-<h1>Инструкции</h1>
-     
-<div class="advantages_container">
-	<div class="advantages">
-		<div class="advantages_item">
-			<% @instructions.each do |instruction| %>
-				<img class ="imge">
-					<% instruction.images.each do |image|%>
-      					<%= image_tag(image.file_url) %>
-      				<% end %>
-      			<h2><%= instruction.title %></h2>
-      			<p><%= instruction.text %></p>
-      		<% end %>
-      	</div>
-      	
+<div class="container padding_top">
+  <div class="shaped"></div>
+    <div class="content">
+      <h1>At vero eos et accusamus</h1>
+      <p>
+         On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+         On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+      </p>
+   </div>
+</div>
+
+<img class="circle" src="../assets/logo.jpg" alt="">
+<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+         On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+         
+</p>
+
+<div class="container padding">
+  <h1 class="text-center padding_top">Инструкции</h1>
+  <div class="group_box padding">
+
+    <% @instructions.each do |instruction| %>
+    <div class="group_info">
+      <h2><%= instruction.title %></h2>
+      <p><%= instruction.text %></p>
+    </div>
+
+    <div class="group_img oneImg">
+      <% instruction.images.each do |image|%>
+            <%= image_tag(image.file_url) %>
+      <% end %>
+    </div>
+    <% end %>
+  </div> 
+</div>
+
+<li class="a-item ng-scope">
+  <div class="aviaItem">
+    <div class="left_side">
+      <div class="first_foto">
+        <img src="assets/2.jpg" alt="">
+      </div>
+      <div class="other_foto">
+        <img class="photos ng-scope" src="assets/1.jpg" alt="">
+        <img class="photos ng-scope" src="assets/3.jpg" alt="">
+        <img class="photos ng-scope" src="assets/footer.jpg" alt="">
+        <img class="photos ng-scope" src="assets/logo.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</li>

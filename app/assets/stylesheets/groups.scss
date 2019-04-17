@@ -19,7 +19,10 @@
 	display: grid;
 	grid-template-rows: 50px 350px ;
 	justify-content: left;
-    overflow: hidden;
+    padding: 20px;
+    margin-right: 12px;
+    border: 2px solid #1E1010;
+    overflow-x:scroll;
 }
 
 .group_img {
@@ -62,8 +65,3 @@
 }
 
 
-body{background:url(http://bootstraptema.ru/images/bg/bg-4.png)}
-
-p {
-    font-size: 14px;
-}

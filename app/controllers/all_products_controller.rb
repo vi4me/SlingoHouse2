@@ -9,4 +9,10 @@ class AllProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:price, :name, :pr_description, :favorit, images_attributes: [:id, :file, :_destroy])
+  end
 end

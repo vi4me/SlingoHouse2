@@ -15,5 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-
+jQuery(document).ready(function() {
+    jQuery('.left_side').on('click', '.photos', function() {
+      var src = jQuery(this).attr('src');
+      jQuery(this).parent().parent().closest('.left_side').find('.first_foto img').attr('src', src);
+  });
+  });
 

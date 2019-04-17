@@ -1,31 +1,41 @@
-<div class="padding_top">
-  <%= form_tag all_products_path, method: :get do  %>
-    <%= text_field_tag 'q[name_cont]', params[:q]&.[](:name_cont), placeholder: 'Поиск по товару' %>
-    <%= text_field_tag 'q[price_qteq]', params[:q]&.[](:price_qteq), placeholder: 'Минимальная цена' %>
-    <%= text_field_tag 'q[price_lteq]', params[:q]&.[](:price_lteq), placeholder: 'Максимальная цена' %>
-    <br>
-    <%= submit_tag 'Поиск', class: 'btn btn-default' %>
-  <% end %>
+<div class="container padding_top padding">
+  <div class="row">
+    <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 col-xl-8 search">
+      <%= form_tag all_products_path, method: :get do  %>
+        <%= text_field_tag 'q[name_cont]', params[:q]&.[](:name_cont), placeholder: 'Поиск по товару' %>
+        <%= text_field_tag 'q[price_qteq]', params[:q]&.[](:price_qteq), placeholder: 'Минимальная цена' %>
+        <%= text_field_tag 'q[price_lteq]', params[:q]&.[](:price_lteq), placeholder: 'Максимальная цена' %>
+    </div>
+    <div class="col-xs-2 col-sm-2 vol-md-4 col-lg-4 col-xl-4">
+      <%= submit_tag 'Поиск', class: 'btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<h1>Список товара</h1>
-<table>
-  <tr>
-    <th>Название</th>
-    <th>Описание</th>
-    <th>Цена</th>
-    <th>Фото</th>
-  </tr>
+<h1 class="display-4 text-center">Все товары</h1>
+<div class="container padding">
+  <div class="prod_box padding">
 
-<% @product.each do |product| %>
-    <tr>
-      <td><%= product.name%></td>
-      <td><%= product.pr_description %></td>
-      <td><%= product.price %></td>
-      <td><% product.images.each do |image| %>
-        <%= image_tag(image.file_url(:thumb)) %></td>
-      <% end %>
-    <tr>
-<% end %>
-</table>
+    <% @products.each do |product| %>
+    <div class="prod_info text-center">
+      <div class="rotate">
+        <div class="prod_img oneImg">
+          <% product.images.each do |image| %>
+            <%= image_tag(image.file_url, class: 'img-responsive img-rounded') %>
+          <% end %>
+        </div>
+        
+        <div class="text">
+          <div class="padding">
+            <h3 class="card-title"><%= product.name%></h4>
+            <p>Цена: <%= product.price %></p>
 
+            <button type="button" class="btn btn-success" >Открыть блок</button>
+          </div>
+        </div> 
+      </div> 
+    </div>
+    <% end %>
+  </div>  
+</div>

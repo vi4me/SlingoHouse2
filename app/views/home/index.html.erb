@@ -69,7 +69,7 @@
   <hr class="my-4">
 </div>
 
-<div class="container-fluid padding">
+<div class="container-fluid padding" id="report">
   <div class="row padding news-box">
     <div class="col-lg-6 news-content">
       <h2>Новости</h2>
@@ -84,7 +84,7 @@
       
     </div>
 
-    <div class="col-lg-6  oneImg news-img">
+    <div class="col-lg-6 zoom oneImg news-img" id="ex1">
       <% report.images.each do |image| %>
         <%= image_tag(image.file_url, class: 'img-responsive img-rounded') %>
       <% end %>
@@ -102,9 +102,9 @@
 </figure>
 
 <div class="text-center">
-  <button type="button" class="btn btn-success" id="gifsBtn" data-toggle="collapse" data-target="#gifs">Открыть блок</button>
+  <button type="button" class="btn btn-success" id="gifsBtn" data-toggle="collapse" data-target="#gif">Открыть блок</button>
 </div>
-<div class="collapse" id="gifs">
+<div class="collapse gifs" id="gif">
   <div class="container-fluid paddind">
     <div class="row text-center">
       <div class="col-sm-6 col-md-3">
@@ -124,31 +124,30 @@
   </div> 
 </div>
 
-<div class="container-fluid paddind">
-  <div class="row alert text-center">
-    <div class="col-12">
-      <h1 class="display-4">Лучшие товары</h1>
-    </div>
-    <hr>
-  </div>
-</div>
+<h1 class="display-4 text-center" id="best_prod">Лучшие товары</h1>
+<div class="container padding">
+  <div class="prod_box padding">
 
-<div class="container"> 
-  <div class="row padding">
-    <div class="col-md-4">
-        <div class="card-body" id="gifs">
-          <% @products.each do |product| %>
-            <div class="oneImg col">
-              <% product.images.each do |image| %>
-                <%= image_tag(image.file_url) %>
-              <% end %>
-              <h4 class="card-title"><%= product.name%></h4>
-              <p class="card-text"><%= product.pr_description %></p>
-              <p class="card-price"><%= product.price %></p>
-              <a href="#" class="btn btn-danger">Посмотреть</a> 
-            </div>
-          <% end %>  
+    <% @products.each do |product| %>
+    <div class="prod_info text-center">
+      <div class="rotate">
+        <div class="prod_img oneImg">
+          <% product.images.each do |image| %>
+            <%= image_tag(image.file_url, class: 'img-responsive img-rounded') %>
+          <% end %>
         </div>
+        
+        <div class="text">
+          <div class="pd">
+            <h3 class="card-title"><%= product.name%></h4>
+            <p class="description"><%= product.pr_description %></p>
+            <p>Цена: <%= product.price %></p>
+
+            <button type="button" class="btn btn-success" >Открыть блок</button>
+          </div>
+        </div> 
+      </div> 
     </div>
-  </div>
+    <% end %>
+  </div>  
 </div>

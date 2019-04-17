@@ -9,9 +9,17 @@
   </button>
 
 <div class="collapse navbar-collapse" id="navbarResponsive">
-  <ul class="nav navbar-nav ml-auto">
-    <li class="nav-item active">
-      <%= link_to 'Главная', root_path, {:class=>"nav-link"}%>
+  <ul class="nav nav-pills navbar-nav ml-auto">
+    <li class="nav-item dropdown active">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Главная</a>
+      <div class="dropdown-menu">
+        <%= link_to 'Главная', root_path, {:class=>"nav-link"}%>
+        <a class="dropdown-item" href="#best_prod">Лучшие товары</a>
+        <a class="dropdown-item" href="#report">Новости</a>
+        <div role="separator" class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#footer">Контакты</a>
+      </div>
+      
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Каталоги</a>
@@ -19,7 +27,7 @@
           <li class="">
             <%= link_to 'Каталоги', groups_path, {:class=>"nav-link"} %>
           </li>
-          <li class=""><a href="">Действие</a></li>
+          <li class=""><a href=""><ion-icon name="beer"></ion-icon></a></li>
           <li class=""><a href="">Действие</a></li>
           <li class="divider" ></li>
           <li class="dropdown-header">Заголовок</li>
